@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="employee-btf">
+    <default-activity id="__1">EmployeesSearch</default-activity>
+    <managed-bean id="__4">
+      <managed-bean-name id="__5">EmployeesSearchBean</managed-bean-name>
+      <managed-bean-class id="__3">de.hahn.blog.tableadvancedsort.view.employees.EmployeesSearchBean</managed-bean-class>
+      <managed-bean-scope id="__2">request</managed-bean-scope>
+    </managed-bean>
+    <view id="EmployeesSearch">
+      <page>/WEB-INF/de/hahn/blog/advancedtablesort/view/employees/EmployeesSearch.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

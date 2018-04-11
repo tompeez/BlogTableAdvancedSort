@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:panelStretchLayout topHeight="50px" id="psl1" startWidth="140px">
+          <f:facet name="top">
+            <af:outputText value="Advanced Table Sort" id="ot1" inlineStyle="font-size:x-large;"/>
+          </f:facet>
+          <f:facet name="center">
+            <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1" partialTriggers="::cl1 ::cl2"/>
+            <!-- id="af_one_column_header_stretched"  -->
+          </f:facet>
+          <f:facet name="start">
+            <af:panelGroupLayout id="pgl1" layout="vertical">
+              <af:commandLink text="Emp Add Criteria in VO" action="#{viewScope.DynamicRegionBean.employeebtf}" id="cl1"/>
+              <af:commandLink text="Dep Add Criteria in Bean" action="#{viewScope.DynamicRegionBean.departmentsbtf}" id="cl2"/>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

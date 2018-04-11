@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.64.93" id="DepartmentsPageDef"
+                Package="de.hahn.blog.advancedtablesort.view.departments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DepartmentsView" RangeSize="25" DataControl="BTASAppModuleDataControl" id="DepartmentsViewIterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" Binds="DepartmentsViewIterator"
+                  id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DepartmentsViewIterator" id="DepartmentsView">
+      <nodeDefinition DefName="de.hahn.blog.tableadvancedsort.model.adfbc.views.DepartmentsView" Name="DepartmentsView0">
+        <AttrNames>
+          <Item Value="DepartmentId"/>
+          <Item Value="DepartmentName"/>
+          <Item Value="ManagerId"/>
+          <Item Value="LocationId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

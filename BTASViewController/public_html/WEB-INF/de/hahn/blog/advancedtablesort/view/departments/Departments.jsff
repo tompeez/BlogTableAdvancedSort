@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="center">
+      <af:panelGroupLayout layout="vertical" id="pgl1">
+        <af:panelHeader text="Departments" id="ph1">
+          <af:query id="qryId1" headerText="Search" disclosed="true" value="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
+                    model="#{bindings.ImplicitViewCriteriaQuery.queryModel}" queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                    queryOperationListener="#{bindings.ImplicitViewCriteriaQuery.processQueryOperation}" resultComponentId="::resId1" saveQueryMode="hidden"
+                    modeChangeVisible="false"/>
+        </af:panelHeader>
+        <af:table value="#{bindings.DepartmentsView.collectionModel}" var="row" rows="#{bindings.DepartmentsView.rangeSize}"
+                  emptyText="#{bindings.DepartmentsView.viewable ? 'No data to display.' : 'Access Denied.'}" fetchSize="#{bindings.DepartmentsView.rangeSize}"
+                  rowBandingInterval="0" filterModel="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
+                  queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}" filterVisible="true" varStatus="vs"
+                  selectedRowKeys="#{bindings.DepartmentsView.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.DepartmentsView.collectionModel.makeCurrent}" rowSelection="single" id="resId1" styleClass="AFStretchWidth"
+                  sortListener="#{DepartmentSearchBean.sortTableListener}">
+          <af:column sortProperty="#{bindings.DepartmentsView.hints.DepartmentId.name}" filterable="true" sortable="true"
+                     headerText="#{bindings.DepartmentsView.hints.DepartmentId.label}" id="resId1c1">
+            <af:outputText value="#{row.DepartmentId}" id="ot2">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsView.hints.DepartmentId.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.DepartmentsView.hints.DepartmentName.name}" filterable="true" sortable="true"
+                     headerText="#{bindings.DepartmentsView.hints.DepartmentName.label}" id="resId1c2">
+            <af:outputText value="#{row.DepartmentName}" id="ot4"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.DepartmentsView.hints.ManagerId.name}" filterable="true" sortable="true"
+                     headerText="#{bindings.DepartmentsView.hints.ManagerId.label}" id="resId1c3">
+            <af:outputText value="#{row.ManagerId}" id="ot3">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsView.hints.ManagerId.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.DepartmentsView.hints.LocationId.name}" filterable="true" sortable="true"
+                     headerText="#{bindings.DepartmentsView.hints.LocationId.label}" id="resId1c4">
+            <af:outputText value="#{row.LocationId}" id="ot1">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsView.hints.LocationId.format}"/>
+            </af:outputText>
+          </af:column>
+        </af:table>
+      </af:panelGroupLayout>
+      <!-- id="af_one_column_stretched"   -->
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

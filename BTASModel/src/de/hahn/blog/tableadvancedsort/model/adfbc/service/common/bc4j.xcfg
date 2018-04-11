@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="de.hahn.blog.tableadvancedsort.model.adfbc.service.BTASAppModule">
+      <AppModuleConfig DeployPlatform="LOCAL" jbo.project="de.hahn.blog.tableadvancedsort.model.BTASModel" name="BTASAppModuleLocal" ApplicationName="de.hahn.blog.tableadvancedsort.model.adfbc.service.BTASAppModule">
+         <Database jbo.locking.mode="optimistic"/>
+         <Security AppModuleJndiName="de.hahn.blog.tableadvancedsort.model.adfbc.service.BTASAppModule"/>
+         <Custom JDBCDataSource="jdbc/HRConnDS"/>
+      </AppModuleConfig>
+      <AppModuleConfig DeployPlatform="LOCAL" jbo.project="de.hahn.blog.tableadvancedsort.model.BTASModel" name="BTASAppModuleShared" ApplicationName="de.hahn.blog.tableadvancedsort.model.adfbc.service.BTASAppModule">
+         <AM-Pooling jbo.ampool.dynamicjdbccredentials="false" jbo.ampool.isuseexclusive="false" jbo.ampool.maxpoolsize="1" jbo.ampool.resetnontransactionalstate="false"/>
+         <Database jbo.locking.mode="optimistic"/>
+         <Security AppModuleJndiName="de.hahn.blog.tableadvancedsort.model.adfbc.service.BTASAppModule"/>
+         <Custom JDBCDataSource="jdbc/HRConnDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.1.64.93" id="DataBindings" SeparateXMLFiles="false"
+             Package="de.hahn.blog.tableadvancedsort.view"
+             ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding" className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/WEB-INF/de/hahn/blog/advancedtablesort/view/employees/EmployeesSearch.jsff"
+          usageId="de_hahn_blog_tableadvancedsort_view_EmployeesSearchPageDef"/>
+    <page path="/Start.jspx" usageId="de_hahn_blog_tableadvancedsort_view_StartPageDef"/>
+    <page path="/WEB-INF/de/hahn/blog/advancedtablesort/view/departments/Departments.jsff" usageId="de_hahn_blog_tableadvancedsort_view_DepartmentsPageDef"/>
+    <page path="/WEB-INF/de/hahn/blog/advancedtablesort/view/departments/Department.jsff" usageId="de_hahn_blog_tableadvancedsort_view_DepartmentPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="de_hahn_blog_tableadvancedsort_view_EmployeesSearchPageDef" path="de.hahn.blog.advancedtablesort.view.employees.EmployeesSearchPageDef"/>
+    <page id="de_hahn_blog_tableadvancedsort_view_StartPageDef" path="de.hahn.blog.tableadvancedsort.view.pageDefs.StartPageDef"/>
+    <page id="de_hahn_blog_tableadvancedsort_view_DepartmentsPageDef" path="de.hahn.blog.advancedtablesort.view.departments.DepartmentsPageDef"/>
+    <page id="de_hahn_blog_tableadvancedsort_view_DepartmentPageDef" path="de.hahn.blog.advancedtablesort.view.departments.DepartmentPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="BTASAppModuleDataControl" Package="de.hahn.blog.tableadvancedsort.model.adfbc.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true" SupportsFindMode="true" SupportsRangesize="true"
+                     SupportsResetState="true" SupportsSortCollection="true" Configuration="BTASAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
